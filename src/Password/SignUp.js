@@ -15,65 +15,36 @@ class SignUp extends Component {
             password: "",
             confirm: ""
         }
-
-            this.handleChange = this.handleChange.bind(this);
-
-        }
-
-        handleChange(e) {
-            this.setState({ input: e.currentTarget.value });
-        }
+    }
     
 
-    backgroundColour() {
-        let style;
-        let length = this.state.confirm.length;
-        if (length < 12) {
-            return style = {borderColor:"red"}
-        }}
-
     render() {
+        let valid = this.state.password.length >= this.props.minimumLength && this.state.password === this.state.confirm;
+        //set validation rules in the render method, so that the password can be re-used more easily
 
-        
+
         return (
             <Form>
                 <Password 
                 label for="Password"
                 value={ this.state.password }
+                valid={ valid }
                 handleChange={ (e) => {
                     this.setState({ password: e.currentTarget.value })
                 }}
                 />
-                  
                 <Password 
                 label for="Confirm Password"
                 value={ this.state.confirm }
-                style={this.backgroundColour()}
+                valid={ valid }
                 handleChange={ (e) => {
                     this.setState({ confirm: e.currentTarget.value })
                 }}
                 />
-
-              
             </Form>
         )
     }
 }
-//input password X 2
-//pass them props - value, label, error, handleClick
-
-//set up constructor
-//set up state - confirmation & value
-
-// this.state.password
-// this.state.confirmation
-
-//different event handlers for each state 
-
-//are password and confimration in state the same and are they longer than limit 
-//if all true, no error
-
-
 
 
 export default SignUp;

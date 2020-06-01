@@ -11,7 +11,7 @@ const App = () => (
   <Router>
     <Fragment>
       <Squares></Squares>
-      <SignUp></SignUp>
+      <SignUp minimumLength = { 6 }></SignUp>
     </Fragment>
   </Router>
 )
