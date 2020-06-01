@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 
-const Password = ({ selected, handleClick, colour }) => (
-    <div 
-    onClick={ handleClick }
-    style={{
-        height: 100,
-        width: 100,
-        background: selected ? colour : "green",
-    }}>
+const Password = ({ label, value, error, handleChange }) => (
+    <div>
+        <label for = { label }></label>
+        <input
+        onChange={ handleChange }
+        type="password"
+        value={ value }
+        />
     </div>
+    
 )
-Password.defaultProps = {
-      colour: "pink"
-    }
-  
+
 export default Password;
+
+
+//label input
+//what should it display 
+//label prop 
+//printed in label html element
+//value prop 
+//error or not ?
+//handelChange prop
