@@ -24,24 +24,56 @@ class SignUp extends Component {
 
 
         return (
-            <Form>
-                <Password 
+            <>
+            <Form className="d-flex flex-column align-items-center">
+                <Form.Group controlId="formGroupPassword">
+                <Form.Label>Password</Form.Label>
+                    <Password 
+                        label for="Password"
+                        value={ this.state.password }
+                        valid={ valid }
+                        handleChange={ (e) => {
+                            this.setState({ password: e.currentTarget.value })
+                        }}
+                />
+                <Form.Label>Confirm Password</Form.Label>
+                    <Password 
+                        label for="Confirm Password"
+                        value={ this.state.confirm }
+                        valid={ valid }
+                        handleChange={ (e) => {
+                            this.setState({ confirm: e.currentTarget.value })
+                        }}
+                />
+                </Form.Group>
+            </Form>
+            
+            {/* <Form>
+            <Form.Row>
+                <Col>
+                <Form.Control placeholder="Password"
                 label for="Password"
                 value={ this.state.password }
                 valid={ valid }
                 handleChange={ (e) => {
                     this.setState({ password: e.currentTarget.value })
-                }}
-                />
-                <Password 
-                label for="Confirm Password"
-                value={ this.state.confirm }
+                }}/>
+                </Col>
+
+                <Col>
+                
+                <Form.Control placeholder="Confirm Password"
+                label for="Password"
+                value={ this.state.password }
                 valid={ valid }
                 handleChange={ (e) => {
-                    this.setState({ confirm: e.currentTarget.value })
-                }}
-                />
-            </Form>
+                    this.setState({ password: e.currentTarget.value })
+                }}/>
+                </Col>
+                
+            </Form.Row>
+            </Form> */}
+            </>
         )
     }
 }

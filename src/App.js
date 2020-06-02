@@ -10,7 +10,7 @@ import SignUp from "./Password/SignUp";
 const App = () => (
   <Router>
     <Fragment>
-      <Squares></Squares>
+      <Squares colour="pink"></Squares>
       <SignUp minimumLength = { 6 }></SignUp>
     </Fragment>
   </Router>
