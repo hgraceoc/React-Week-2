@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "../Ajax/axios";
 
 import Tag from "./Tag";
+import Comments from "./Comments";
 
 class Article extends Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class Article extends Component {
                 <h2>{ article.title }</h2>
                 <p>{ article.content }</p>
                 <Tag tags={ article.tags }/>
+                <Comments id={ article.id}></Comments>
             </div>
             </>
 
