@@ -35,7 +35,7 @@ class Articles extends Component {
                     {articles.map(article => (
                         <li key={article.id}
                         className="list-group-item">
-                            <Link>{ article.title }</Link>
+                            <Link to={ `/news/${ article.id }` }>{ article.title }</Link>
                             <p className="tags d-flex flex-end">
                             <Tag tags={ article.tags }/>
                             </p>

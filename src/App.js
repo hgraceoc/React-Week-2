@@ -20,7 +20,7 @@ import {
 const App = () => (
   <Router>
     <Fragment>
-      <Link to="/"><h1 className="centered">Hiya!</h1></Link>
+      <Link to="/"><h1 className="d-flex flex-column align-items-center p-4">Hiya!</h1></Link>
 
       <Switch>
         <Route exact path="/squares">
@@ -43,8 +43,9 @@ const App = () => (
           <Articles />
         </Route>
 
-        <Route exact path="/news/id">
-          <Article />
+        <Route exact path="/news/:id" render={ ({match}) => (
+        <Article id= {match.params.id}/>
+         )}>  
         </Route>
 
      
