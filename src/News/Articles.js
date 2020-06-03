@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "../Ajax/axios";
 
+import Tag from "./Tag";
+
 class Articles extends Component {
     constructor(props) {
         super(props);
@@ -33,6 +35,10 @@ class Articles extends Component {
                     {articles.map(article => (
                         <li key={article.id}
                         className="list-group-item">
+                            <Link>{ article.title }</Link>
+                            <p className="tags d-flex flex-end">
+                            <Tag tags={ article.tags }/>
+                            </p>
 
                         </li>
                     ))}

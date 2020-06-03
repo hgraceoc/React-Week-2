@@ -8,6 +8,7 @@ import SignUp from "./Password/SignUp";
 import Button from "./Button/Button";
 import Form from "./Form/Form";
 import Articles from "./News/Articles";
+import Article from "./News/Article";
 import Footer from "./Footer";
 
 import {
@@ -40,6 +41,10 @@ const App = () => (
 
         <Route exact path="/news">
           <Articles />
+        </Route>
+
+        <Route exact path="/news/id">
+          <Article />
         </Route>
 
      
