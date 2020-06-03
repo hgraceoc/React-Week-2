@@ -29,7 +29,7 @@ class SignUp extends Component {
                 <Form.Group controlId="formGroupPassword">
                 <Form.Label>Password</Form.Label>
                     <Password 
-                        label for="Password"
+                        label htmlFor="Password"
                         value={ this.state.password }
                         valid={ valid }
                         handleChange={ (e) => {
@@ -38,7 +38,7 @@ class SignUp extends Component {
                 />
                 <Form.Label>Confirm Password</Form.Label>
                     <Password 
-                        label for="Confirm Password"
+                        label htmlFor="Confirm Password"
                         value={ this.state.confirm }
                         valid={ valid }
                         handleChange={ (e) => {

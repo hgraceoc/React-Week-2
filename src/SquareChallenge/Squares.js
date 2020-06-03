@@ -16,7 +16,6 @@ class Squares extends Component {
     }
 
     render() {
-        let { name } = this.props;
 
         let { selected } = this.state;
             
