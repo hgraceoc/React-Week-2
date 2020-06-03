@@ -12,6 +12,7 @@ import Article from "./News/Article";
 // import CreateArticle from "./News/CreateArticle";
 import Footer from "./Footer";
 import ClickedHooks from "./Hooks/ClickedHooks";
+import SquareHooks from "./Hooks/SquareHooks";
 
 import {
   BrowserRouter as Router,
@@ -56,6 +57,7 @@ const App = () => (
 
         <Route exact path="/hooks">
           <ClickedHooks />
+          <SquareHooks />
         </Route>
 
 
