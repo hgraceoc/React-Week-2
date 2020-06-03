@@ -9,7 +9,9 @@ import Button from "./Button/Button";
 import Form from "./Form/Form";
 import Articles from "./News/Articles";
 import Article from "./News/Article";
+// import CreateArticle from "./News/CreateArticle";
 import Footer from "./Footer";
+import ClickedHooks from "./Hooks/ClickedHooks";
 
 import {
   BrowserRouter as Router,
@@ -44,9 +46,18 @@ const App = () => (
         </Route>
 
         <Route exact path="/news/:id" render={ ({match}) => (
-        <Article id= {match.params.id}/>
+           <Article id= {match.params.id}/>
          )}>  
         </Route>
+
+        {/* <Route exact path="/news/create">
+          <CreateArticle />
+        </Route> */}
+
+        <Route exact path="/hooks">
+          <ClickedHooks />
+        </Route>
+
 
      
       </Switch>

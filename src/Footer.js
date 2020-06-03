@@ -28,6 +28,14 @@ const Footer = () => (
       <Link to="/News">News</Link>
     </li>
 
+    <li className="list-group-item">
+      <Link to="/news/create">Create Article</Link>
+    </li>
+
+    <li className="list-group-item">
+      <Link to="/hooks">Hooks</Link>
+    </li>
+
 
 </ul> );
 
