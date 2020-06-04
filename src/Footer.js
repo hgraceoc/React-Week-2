@@ -29,11 +29,15 @@ const Footer = () => (
     </li>
 
     <li className="list-group-item">
-      <Link to="/news/create">Create Article</Link>
+      <Link to="/make">Create Article</Link>
     </li>
 
     <li className="list-group-item">
       <Link to="/hooks">Hooks</Link>
+    </li>
+
+    <li className="list-group-item">
+      <Link to="/reducers">Reducers</Link>
     </li>
 
 

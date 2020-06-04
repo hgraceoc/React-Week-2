@@ -64,7 +64,7 @@ const App = () => (
 
         <Route exact path="/make">
           <CreateArticle />
-          <CreateComment />
+          {/* <CreateComment /> */}
         </Route>
 
         <Route exact path="/hooks">

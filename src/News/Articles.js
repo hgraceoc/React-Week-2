@@ -15,10 +15,15 @@ class Articles extends Component {
     }
 
     componentDidMount() {
+        //loads articles from API
+        //runs only once after first render
         axios.get('/articles').then(({ data }) => {
             this.setState({
                 loaded: true,
                 articles: data.data,
+                //gives us back a data object
+                //loaded to true to keep track of the fact it has in fact loaded
+                //articles array updated to include the data from the get request
             });
         }) 
     }

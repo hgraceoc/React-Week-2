@@ -17,6 +17,7 @@ class Article extends Component {
     }
 
     componentDidMount() {
+        //runs when the component first renders
         let { id } = this.props;
         axios.get(`/articles/${id}`).then(({ data }) => {
             this.setState({
@@ -46,3 +47,10 @@ class Article extends Component {
 }
 
 export default Article;
+
+//could also have 
+// {article.tags.map((tag, index) => (
+//     <p>>key={index}
+//     {tag}
+//     </p>
+// ))}
