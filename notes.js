@@ -8,8 +8,8 @@ axios.get("/articles");
 // make a POST request, with the given data
 axios.post("/articles", {
     title: "Hello",
-     
-article: "Blah blah blah",
+
+    article: "Blah blah blah",
     tags: ["fish", "cat", "spoon"],
 });
 // make a PUT request, with the given data
@@ -38,7 +38,8 @@ export default axios.create({
         Accept: "application/json"
         // use your own key
     Authorization: "Bearer 15beab53cc8880738da99953d2f6ceffbe83418a"
-    }, });
+    },
+});
 
 
 //ajax.js - call axios file into ajax
@@ -76,7 +77,7 @@ console.log("Goodbye")
 axios.get("/articles").then(({ data }) => console.log(data.data));
 //in laravel data.data - returns the data we want, than console.log(data) which would return the data as well as the resources 
 
-axios.get("/articles").then(({ data }) => console.log(data.data.map(article => article.id )));
+axios.get("/articles").then(({ data }) => console.log(data.data.map(article => article.id)));
 //get back an array of article id's
 
 //promises may not run in the order that they run in, as they take different amount of time
@@ -119,7 +120,7 @@ componentDidMount() {
 //when a component stops being on the screen 
 //used to reverse something set in the componentDidMount 
 componentDidMount() {
-   this.intervalID = setInterval(() => {
+    this.intervalID = setInterval(() => {
         this.setState({ count: this.state.count + 1 });
     }, 1000);
 }
@@ -137,7 +138,7 @@ componentWillUnmount() {
 //fires when the props change
 //fires when the state changess
 componentDidUpdate() {
-    
+
 }
 
 //an API request for when the component first loads 
@@ -151,24 +152,202 @@ componentDidMount() {
 }
 
 
-render () {
+render() {
     let { articles, loaded } = this.state;
-  }
-        return !loaded? <p>Loading...</p> : (
-            <>
-            <h2>Articles</h2>
-            <ul className="list-group">
-                {articles.map(article => (
-                    <li key={article.id} className="list-group=item">
-                    </li>
+}
+return !loaded ? <p>Loading...</p> : (
+    <>
+        <h2>Articles</h2>
+        <ul className="list-group">
+            {articles.map(article => (
+                <li key={article.id} className="list-group=item">
+                </li>
 
-                ))}
-            </ul>
-            </>
-        )
-    }
+            ))}
+        </ul>
+    </>
+)
+}
+
 
 
 handleSubmit() {
     axios.post()
+}
+
+//HOOKS
+
+let arr = [1, 2, 3]
+
+let ob = { name: "Jim", age: 34 }
+
+let { colour } = ob
+//object destructuring 
+
+let [first, second] = arr;
+//array destructuring 
+
+let [, , , , fifth] = arr;
+//skip over values 
+
+
+//CounterHooks.js
+import React, { useState } from "react";
+
+//efffectively to what you return from a class based component in the render method
+const Counter = () => {
+    const [counter, setCounter] = useState(0);
+    //(0) setting the inital value 
+    const [name, setName] = useState("");
+    //useState is a hook that should be used if you only need to keep track of one or two states 
+
+    const handleClick = () => setCounter(counter + 1);
+
+    return (
+        <p onClick={handleClick}>{counter}</p>
+    );
+};
+
+export default Counter;
+
+
+//Tuple
+("mark", 36)
+
+
+
+
+const Counter = () => {
+    const [player1, setPlayer1] = useState(0)
+    const [player2, setPlayer2] = useState(0)
+
+    const handleP1Click = () => setPlayer1(counter + 1);
+    const handleP2Click = () => setPlayer2(counter + 1);
+
+
+    return (
+        <>
+            <div>onClick{handleP1Click}</div>
+            <div>onClick{handleP2Click}</div>
+        </>
+    )
+}
+
+
+//Reducers
+//not react specific
+
+//counter.js
+const reducer = () => {
+
+};
+
+let arr = [1, 2, 3, 4];
+
+arr.reduce((total, current) => total + current, 0)
+
+//each time the reducer runs, it builds on the previous state 
+
+const reducer = (state, action) => {
+    if (action.type === "INCREMENT_P1") {
+        return {
+            ...state,
+            //copied across all the properties of state
+            player1: state.player1 + 1,
+            //player one is a property of the variable state 
+            //update the value of whatever we target in state 
+        }
+
+        return state;
+
+    };
+    //gets given a version of state, and returns a version of state 
+    //action is the second parameter, and tells the reducer what to do 
+
+    let initialState = {
+        player1: 0,
+        player2: 0,
+    };
+    let incremenetP1 = { type: "INCREMENT_P1" };
+    //action type, uppercase string 
+    //type is a naming convention 
+
+    let result = reducer(initialState, incrementP1);
+
+
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "INCREMENT_P1": return {
+                ...state,
+                player1: state.player1 + 1,
+            };
+
+            case "INCREMENT_P2": return {
+                ...state,
+                player2: state.player2 + 1, s
+            };
+        }
+
+        return state;
+
+    };
+
+    let initialState = {
+        player1: 0,
+        player2: 0,
+    };
+    let incrementP1 = { type: "INCREMENT_P1" };
+    let incrementP2 = { type: "INCREMENT_P2" };
+
+    let first = reducer(initialState, incrementP1);
+    let second = reducer(first, incrementP1);
+    let third = reducer(second, incrementP1);
+
+
+    //to use the same function for differnt players
+    const increment = (state, action) => {
+        return {
+            ...state,
+            ["player" + action.player]: state["player" + action.player] + 1,
+        }
+
+        const reducer = (state, action) => {
+            switch (action.type) {
+                case "INCREMENT": return increment(state, action);
+                case "RESET": return initialState;
+                default: return state;
+            }
+        }
+
+    let increment = { type: "INCREMENT", player: 1 };
+
+
+let result = [incrementP1, incrementP1, incrementP2].reduce(reducer, initialState);
+
+
+const increment = (state, { player }) => {
+    let key = "player" + player;
+
+    return {
+        ...state
+        [key]: state[key] + 1,
+    };
+};
+
+//BACK IN REACT 
+import React, { useReducer } from "react";
+
+const Counter = () => {
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    return (
+        <>
+            <div onClick={ () => dispatch({type: "INCREMENT", player: 1}) }
+                >
+                    <h1 { state.player1 }></h1>
+            </div>
+
+            <button onClick={ () =>dispatch({type: "RESET"})}>Reset</button>
+        </>
+    )
 }
