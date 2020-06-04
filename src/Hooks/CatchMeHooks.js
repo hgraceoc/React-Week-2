@@ -10,7 +10,7 @@ const CatchMeHooks = ({ jump }) => {
     return (
         <>
             <Button 
-            className="p-2 p-1"
+            className="p-2 p-1 m-4"
             variant="info"
             onClick={ handleClick }
             style = {{position: "absolute", top: location }}>

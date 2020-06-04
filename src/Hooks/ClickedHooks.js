@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 
 const ClickedHooks = () =>  {
-    const [clicked, setClicked] = useState(false);
 
+    const [clicked, setClicked] = useState(false);
+    //destructuring arrays for assignment
 
     const handleClick = () => setClicked(true);
 

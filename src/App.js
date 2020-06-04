@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Squares from "./SquareChallenge/Squares";
 import SignUp from "./Password/SignUp";
@@ -12,11 +11,18 @@ import Article from "./News/Article";
 import CreateArticle from "./News/CreateArticle";
 import CreateComment from "./News/CreateComment";
 import Footer from "./Footer";
+
+//Hooks
 import ClickedHooks from "./Hooks/ClickedHooks";
 import SquareHooks from "./Hooks/SquareHooks";
 import CounterHooks from "./Hooks/CounterHooks";
 import StepCountHooks from "./Hooks/StepCountHooks";
 import CatchMeHooks from "./Hooks/CatchMeHooks";
+import RollCall from "./Hooks/RollCall";
+// import PasswordStrength from "./Hooks/PasswordStrength";
+
+//Reducers
+import ClickedReducer from "./Reducer/ClickedReducer";
 
 import {
   BrowserRouter as Router,
@@ -66,6 +72,12 @@ const App = () => (
           <CounterHooks />
           <StepCountHooks />
           <CatchMeHooks />
+          <RollCall />
+          {/* <PasswordStrength /> */}
+        </Route>
+
+        <Route exact path="/reducers">
+          <ClickedReducer />
         </Route>
 
 

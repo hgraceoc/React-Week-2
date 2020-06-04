@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 const StepCountHooks = ({ max, step }) => {
     const [counter, setCounter] = useState(0);
 
-    const handleClick = () => setCounter(counter + step);
+    const handleClick = () => setCounter(counter + (counter < max ? step : 0));
     const handleMinus = () => setCounter(counter - (counter > 0 ? step : 0));
 
     return (

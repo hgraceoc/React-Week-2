@@ -6,6 +6,7 @@ const SquareHooks = ({ colour }) => {
 
 
     const handleClick = () => setSelected(!selected);
+    //two states, so best to use a boolean 
 
     return (
         <>

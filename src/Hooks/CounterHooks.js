@@ -5,8 +5,8 @@ import Button from 'react-bootstrap/Button'
 const CounterHooks = ({ max }) => {
     const [counter, setCounter] = useState(50);
 
-    const handleClick = () => setCounter(counter + 1);
-    const handleMinus = () => setCounter(counter - (counter < max ? 1 : 0));
+    const handleClick = () => setCounter(counter + ( counter < max ? 1 : 0));
+    const handleMinus = () => setCounter(counter - (counter > 50 ? 1 : 0));
 
     return (
         <>
@@ -18,7 +18,6 @@ const CounterHooks = ({ max }) => {
         </>
     );
 };
-
 
 CounterHooks.defaultProps = {
     max: 100
