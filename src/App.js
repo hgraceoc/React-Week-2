@@ -9,10 +9,14 @@ import Button from "./Button/Button";
 import Form from "./Form/Form";
 import Articles from "./News/Articles";
 import Article from "./News/Article";
-// import CreateArticle from "./News/CreateArticle";
+import CreateArticle from "./News/CreateArticle";
+import CreateComment from "./News/CreateComment";
 import Footer from "./Footer";
 import ClickedHooks from "./Hooks/ClickedHooks";
 import SquareHooks from "./Hooks/SquareHooks";
+import CounterHooks from "./Hooks/CounterHooks";
+import StepCountHooks from "./Hooks/StepCountHooks";
+import CatchMeHooks from "./Hooks/CatchMeHooks";
 
 import {
   BrowserRouter as Router,
@@ -51,13 +55,17 @@ const App = () => (
          )}>  
         </Route>
 
-        {/* <Route exact path="/news/create">
+        <Route exact path="/make">
           <CreateArticle />
-        </Route> */}
+          <CreateComment />
+        </Route>
 
         <Route exact path="/hooks">
           <ClickedHooks />
           <SquareHooks />
+          <CounterHooks />
+          <StepCountHooks />
+          <CatchMeHooks />
         </Route>
 
 
