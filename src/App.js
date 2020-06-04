@@ -23,6 +23,7 @@ import RollCall from "./Hooks/RollCall";
 
 //Reducers
 import ClickedReducer from "./Reducer/ClickedReducer";
+import StepReducer from "./Reducer/StepReducer";
 
 import {
   BrowserRouter as Router,
@@ -78,6 +79,7 @@ const App = () => (
 
         <Route exact path="/reducers">
           <ClickedReducer />
+          <StepReducer />
         </Route>
 
 
