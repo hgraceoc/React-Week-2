@@ -16,6 +16,9 @@ const reducer = (state, action) => {
             ...state,
             celsius: (action.value),
             farenheit: (action.value *9/5+32)
+            //action.value - calling the updating input from the user on the onChange method
+            //we need to both keep track of the input - with celsius
+            //and then to keep track of the change in farenheit 
         };
 
         case "INPUT_FAR": return {
@@ -51,6 +54,7 @@ const TempReducer = () => {
             </Form.Group>
             </Form>
         </>
+        //value: e.currentTarget.value is keeping track of the input, which is data that we need to feed in to the reducer method
     )
 }
 
