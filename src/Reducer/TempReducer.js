@@ -9,24 +9,24 @@ let initialState = {
     farenheit: 0,
 };
 
-let action = { type: "" };
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case "CONVERT_TO_FAR": return {
+        case "INPUT_CEL": return {
             ...state,
-            celsius: (state.celsius *9/5+32),
+            celsius: (action.value),
+            farenheit: (action.value *9/5+32)
         };
 
-        case "CONVERT_TO_CEL": return {
+        case "INPUT_FAR": return {
             ...state,
-            farenheit: ((state.farenheit -32)*5/9),
+            farenheit: (action.value),
+            celsius: ((action.value-32)/9*5)
         };
 
     };
 }
 
-let newState = reducer(initialState, action);
 
 
 const TempReducer = () => {
@@ -34,16 +34,20 @@ const TempReducer = () => {
     
     return (
         <>
-        <h2>Temp Reducer</h2>
+        <h2>Temp Converter</h2>
             <Form>
             <Form.Group>
-                <Form.Label>C</Form.Label>
+                <Form.Label>Celsius</Form.Label>
                     <Form.Control
-                        input onChange={ () => dispatch({type: "CONVERT_TO_FAR", initialState}) }
+                        onChange={ (e) => dispatch({type: "INPUT_CEL", value: +e.currentTarget.value}) }
                         value={ state.celsius }
-                        type="text">
-                        { state.celsius}
-                    </Form.Control>
+                        type="number"/>
+
+                <Form.Label>Farenheit</Form.Label>
+                    <Form.Control
+                        onChange={ (e) => dispatch({type: "INPUT_FAR", value: +e.currentTarget.value}) }
+                        value={ state.farenheit }
+                        type="number"/>
             </Form.Group>
             </Form>
         </>
