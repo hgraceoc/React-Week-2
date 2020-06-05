@@ -24,12 +24,14 @@ import RollCall from "./Hooks/RollCall";
 //Reducers
 import ClickedReducer from "./Reducer/ClickedReducer";
 import StepReducer from "./Reducer/StepReducer";
+import TempReducer from "./Reducer/TempReducer";
 
 import {
   BrowserRouter as Router,
   Route,
   Switch,
 } from "react-router-dom";
+
 
 const App = () => (
   <Router>
@@ -80,6 +82,7 @@ const App = () => (
         <Route exact path="/reducers">
           <ClickedReducer />
           <StepReducer />
+          <TempReducer />
         </Route>
 
 
